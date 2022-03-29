@@ -1,6 +1,5 @@
-package com.sartorial.stockmarket.utilities;
+package com.sartorial.stockmarket;
 
-import com.sartorial.stockmarket.models.Company;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.batch.item.ItemProcessor;

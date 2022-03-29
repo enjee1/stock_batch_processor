@@ -1,4 +1,4 @@
-package com.sartorial.stockmarket.models;
+package com.sartorial.stockmarket;
 
 public class Company {
     private String symbol;
