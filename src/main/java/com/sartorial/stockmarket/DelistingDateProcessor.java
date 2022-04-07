@@ -14,7 +14,7 @@ public class DelistingDateProcessor implements ItemProcessor<Company, Company> {
         final String delistingDate = company.getDelistingDate();
         final Company companyStock;
 
-        if (delistingDate == "null") { company.setDelistingDate("Delisting Date N/A"); }
+        if (delistingDate.equals("null")) { company.setDelistingDate("Delisting Date N/A"); }
 
         companyStock = new Company(
                     symbol, company.getName(), company.getExchange(),

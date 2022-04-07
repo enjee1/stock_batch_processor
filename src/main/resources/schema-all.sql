@@ -1,7 +1,5 @@
-DROP TABLE stocks IF EXISTS;
-
 CREATE TABLE stocks (
-stock_id BIGINT NOT NULL PRIMARY KEY,
+stock_id BIGINT PRIMARY KEY NOT NULL,
 symbol VARCHAR(8),
 stock_name VARCHAR(20),
 exchange_name VARCHAR(10),
