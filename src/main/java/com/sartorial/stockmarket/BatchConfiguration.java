@@ -53,8 +53,8 @@ public class BatchConfiguration {
     public JdbcBatchItemWriter<Company> writer(DataSource dataSource) {
         return new JdbcBatchItemWriterBuilder<Company>()
                 .itemSqlParameterSourceProvider(new BeanPropertyItemSqlParameterSourceProvider<>())
-                .sql("INSERT INTO stocks (stock_id, symbol, stock_name, exchange_name, asset_type, ipo_date, delisting_date, status) " +
-                        "VALUES (:stockId,:symbol, :name, :exchange, :assetType, :ipoDate, :delistingDate, :status)")
+                .sql("INSERT INTO stocks (symbol, stock_name, exchange_name, asset_type, ipo_date, delisting_date, status) " +
+                        "VALUES (:symbol, :name, :exchange, :assetType, :ipoDate, :delistingDate, :status)")
                 .dataSource(dataSource)
                 .build();
 
