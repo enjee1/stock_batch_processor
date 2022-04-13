@@ -20,12 +20,14 @@ public class JobCompletionNotificationListener extends JobExecutionListenerSuppo
         this.jdbcTemplate = jdbcTemplate;
     }
 
-    /*@Override
+    @Override
     public void afterJob(JobExecution jobExecution) {
         if (jobExecution.getStatus() == BatchStatus.COMPLETED) {
             log.info("=== Job complete===");
 
-            jdbcTemplate.query("SELECT symbol, stock_name FROM stocks",
+            jdbcTemplate.query(
+                    "SELECT symbol, stock_name, exchange_name, asset_type, ipo_date, delisting_date, status " +
+                            "FROM stocks",
                     (rs, row) -> new Company(
                             rs.getString(1),
                             rs.getString(2),
@@ -36,5 +38,5 @@ public class JobCompletionNotificationListener extends JobExecutionListenerSuppo
                             rs.getString(7))
                     ).forEach(company -> log.info("Found <" + company + "> in the database."));
         }
-    }*/
+    }
 }

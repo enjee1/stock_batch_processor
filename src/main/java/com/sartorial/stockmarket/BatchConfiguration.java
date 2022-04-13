@@ -20,7 +20,7 @@ import org.springframework.context.annotation.Configuration;
 import org.springframework.core.io.ClassPathResource;
 
 
-//TODO: Add reader, processor, and writer Beans to BatchConfiguration
+
 @Configuration
 @EnableBatchProcessing
 public class BatchConfiguration {
@@ -49,6 +49,7 @@ public class BatchConfiguration {
         return new DelistingDateProcessor();
     }
 
+    //TODO:Check for existing entries in database by stock symbol
     @Bean
     public JdbcBatchItemWriter<Company> writer(DataSource dataSource) {
         return new JdbcBatchItemWriterBuilder<Company>()
